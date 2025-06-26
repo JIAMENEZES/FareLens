@@ -8,6 +8,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { Textarea } from "../ui/textarea";
+
+import { DropDownSelect } from "../DropDownSelect";
+
 const Upload = () => {
   return (
     <div className="w-[600px] flex mx-auto flex-col mt-10">
@@ -20,43 +24,23 @@ const Upload = () => {
 
       <Card className="w-full bg-[rgb(2, 8, 24)] text-white mt-5">
         <CardHeader>
-          <CardTitle>File Upload</CardTitle>
+          <CardTitle className="text-2xl">File Upload</CardTitle>
         </CardHeader>
         <CardContent>
           <form>
             <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <label htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
+              <div className="grid gap-2 w-full">
+                <label htmlFor="fileType">File Type</label>
+                <DropDownSelect />
               </div>
+
               <div className="grid gap-2">
-                <div className="flex items-center">
-                  <label htmlFor="password">Password</label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
-                <input id="password" type="password" required />
+                <label htmlFor="desc">Description (Optional)</label>
+                <Textarea />
               </div>
             </div>
           </form>
         </CardContent>
-        <CardFooter className="flex-col gap-2">
-          <button type="submit" className="w-full">
-            Login
-          </button>
-          <button variant="outline" className="w-full">
-            Login with Google
-          </button>
-        </CardFooter>
       </Card>
     </div>
   );
